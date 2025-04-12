@@ -1,0 +1,41 @@
+services:
+  ssh:
+    enabled: true
+    port: 2222
+    host: "0.0.0.0"
+    banner: "OpenSSH_8.2p1 Ubuntu-4ubuntu0.5"
+  
+  http:
+    enabled: true
+    port: 8080
+    host: "0.0.0.0"
+    banner: "Apache/2.4.41 (Ubuntu)"
+  
+  ftp:
+    enabled: false
+    port: 2121
+    host: "0.0.0.0"
+    banner: "vsftpd 3.0.3"
+  
+  mysql:
+    enabled: false
+    port: 3306
+    host: "0.0.0.0"
+    banner: "5.7.32-standard"
+  
+  redis:
+    enabled: false
+    port: 6379
+    host: "0.0.0.0"
+    banner: "Redis server v=6.0.9"
+
+logging:
+  file: "netcanary.log"
+  level: "info"
+  remote: "" # Optional remote logging endpoint
+
+alerts:
+  slack: "" # Optional Slack webhook URL
+  webhook: "" # Optional generic webhook URL
+  email: "" # Optional email address
+  paranoia: false # When true, shut down all services if any are triggered
